@@ -3,181 +3,73 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Școala Inv Radu Ion</title>
+<title>Meniu</title>
 
 <style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #0f0f0f;
-    color: white;
+body{
+    margin:0;
+    font-family:Arial;
+    background:#0f0f0f;
+    color:white;
 }
 
-header {
-    background: #d60000;
-    text-align: center;
-    padding: 25px;
+.menu{
+    text-align:center;
+    padding:20px;
+    font-size:26px;
+    font-weight:bold;
+    background:linear-gradient(90deg,#ff0000,#ff6a00);
 }
 
-.menu-title {
-    background: linear-gradient(90deg, #ff0000, #ff6a00);
-    text-align: center;
-    padding: 15px;
-    font-size: 22px;
-    font-weight: bold;
+.container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:20px;
+    padding:30px;
 }
 
-.container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-    padding: 30px;
+.box{
+    height:150px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:15px;
+    font-size:20px;
+    font-weight:bold;
+    text-decoration:none;
+    color:white;
+    transition:0.3s;
 }
 
-.card {
-    background: #1f1f1f;
-    padding: 30px;
-    border-radius: 15px;
-    text-align: center;
-    font-size: 18px;
-    font-weight: bold;
-    text-decoration: none;
-    color: white;
-    transition: 0.3s;
+.box:hover{
+    transform:scale(1.07);
 }
 
-.card:hover {
-    transform: scale(1.05);
-    background: #2a2a2a;
-}
-
-.poze { background: linear-gradient(135deg, #00c6ff, #0072ff); }
-.proiecte { background: linear-gradient(135deg, #8e2de2, #4a00e0); }
-.contact { background: linear-gradient(135deg, #11998e, #38ef7d); }
-.info { background: linear-gradient(135deg, #f7971e, #ffd200); }
-
-footer {
-    text-align: center;
-    padding: 15px;
-    color: gray;
-    background: #000;
-}
+/* culori */
+.poze{background:linear-gradient(135deg,#00c6ff,#0072ff);}
+.proiecte{background:linear-gradient(135deg,#8e2de2,#4a00e0);}
+.contact{background:linear-gradient(135deg,#11998e,#38ef7d);}
+.info{background:linear-gradient(135deg,#f7971e,#ffd200);}
 </style>
 </head>
 
 <body>
 
-<header>
-    <h1>🏫 Școala Vadu-Parului</h1>
-</header>
-
-<div class="menu-title">
+<div class="menu">
     Școala Inv Radu Ion
 </div>
 
 <div class="container">
 
-    <a href="poze.html" class="card poze">
-        📸 Poze + Comentarii
-    </a>
+    <a href="poze.html" class="box poze">📸 Poze + Comentarii</a>
 
-    <a href="proiecte.html" class="card proiecte">
-        📂 Proiecte
-    </a>
+    <a href="proiecte.html" class="box proiecte">📂 Proiecte</a>
 
-    <a href="contact.html" class="card contact">
-        📞 Contacte
-    </a>
+    <a href="contact.html" class="box contact">📞 Contacte</a>
 
-    <a href="info.html" class="card info">
-        ℹ Informații Școală
-    </a>
+    <a href="info.html" class="box info">ℹ Informații</a>
 
 </div>
-
-<footer>
-    © 2026 Site realizat de elev
-</footer>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="ro">
-<head>
-<meta charset="UTF-8">
-<title>Poze</title>
-<style>
-body { background:#111; color:white; font-family:Arial; text-align:center; }
-img { width:250px; margin:10px; border-radius:10px; }
-</style>
-</head>
-<body>
-
-<h1>📸 Poze</h1>
-
-<img src="images/poza1.jpg">
-<img src="images/poza2.jpg">
-
-<h2>💬 Comentarii</h2>
-
-<input id="nume" placeholder="Nume">
-<input id="msg" placeholder="Comentariu">
-<button onclick="add()">Trimite</button>
-
-<div id="c"></div>
-
-<script>
-function add() {
-    let n = document.getElementById("nume").value;
-    let m = document.getElementById("msg").value;
-    document.getElementById("c").innerHTML += "<p><b>"+n+":</b> "+m+"</p>";
-}
-</script>
-
-<br><br>
-<a href="index.html" style="color:red;">⬅ Înapoi</a>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="ro">
-<head>
-<meta charset="UTF-8">
-<title>Proiecte</title>
-<style>
-body { background:#111; color:white; text-align:center; font-family:Arial; }
-img { width:300px; margin:10px; border-radius:10px; }
-</style>
-</head>
-<body>
-
-<h1>📂 Proiecte</h1>
-
-<img src="images/proiect1.jpg">
-<img src="images/proiect2.jpg">
-
-<br><a href="index.html" style="color:red;">⬅ Înapoi</a>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="ro">
-<head>
-<meta charset="UTF-8">
-<title>Contact</title>
-<style>
-body { background:#111; color:white; text-align:center; font-family:Arial; }
-</style>
-</head>
-<body>
-
-<h1>📞 Contact</h1>
-
-<p>Email: scoala@vadu-parului.ro</p>
-<p>Telefon: 07xx xxx xxx</p>
-
-<br>
-<a href="index.html" style="color:red;">⬅ Înapoi</a>
 
 </body>
 </html>
