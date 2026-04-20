@@ -9,7 +9,7 @@
 body{
     margin:0;
     font-family:Arial;
-    background:black;
+    background: radial-gradient(circle, #111, black);
     color:white;
 }
 
@@ -20,6 +20,7 @@ body{
     font-weight:bold;
     padding:25px;
     background:linear-gradient(90deg, red, orange);
+    box-shadow:0 5px 20px rgba(0,0,0,0.6);
 }
 
 /* BUTOANE */
@@ -43,10 +44,11 @@ body{
     text-decoration:none;
     color:white;
     transition:0.3s;
+    box-shadow:0 5px 15px rgba(0,0,0,0.5);
 }
 
 .box:hover{
-    transform:scale(1.1);
+    transform:scale(1.1) rotate(1deg);
 }
 
 /* culori */
@@ -66,12 +68,30 @@ body{
 .cats img{
     width:160px;
     border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.6);
 }
 
 .zzz{
     text-align:center;
     margin-top:5px;
     font-size:18px;
+    opacity:0.7;
+}
+
+/* 🐱 PISICA MASCOTĂ */
+.cat-float{
+    position:fixed;
+    bottom:10px;
+    right:-200px;
+    width:120px;
+    animation:moveCat 8s infinite;
+    z-index:999;
+}
+
+@keyframes moveCat {
+    0% { right:-200px; }
+    50% { right:20px; }
+    100% { right:-200px; }
 }
 </style>
 </head>
@@ -110,6 +130,9 @@ body{
     </div>
 
 </div>
+
+<!-- 🐱 PISICA MASCOTĂ ANIMATĂ -->
+<img class="cat-float" src="https://placekitten.com/300/300">
 
 </body>
 </html>
