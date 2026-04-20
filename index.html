@@ -1,30 +1,66 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Site de școală</title>
+    <title>Școala Vadu-Parului</title>
+
     <style>
         body {
+            margin: 0;
+            font-family: Arial;
             background: #111;
             color: white;
-            font-family: Arial;
-            margin: 0;
         }
 
         header {
-            background: red;
-            padding: 20px;
+            background: #d60000;
+            padding: 25px;
             text-align: center;
         }
 
-        section {
+        nav {
+            background: #222;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            color: red;
+        }
+
+        .container {
             padding: 20px;
         }
 
+        h1 {
+            color: white;
+            margin: 10px 0;
+        }
+
         .box {
-            background: #222;
+            background: #1f1f1f;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .box:hover {
+            background: #2a2a2a;
+            transform: scale(1.02);
+        }
+
+        footer {
+            background: #000;
+            text-align: center;
             padding: 15px;
-            margin: 10px;
-            border-radius: 10px;
+            margin-top: 20px;
+            color: gray;
         }
     </style>
 </head>
@@ -32,30 +68,44 @@
 <body>
 
 <header>
-    <h1>🏫 Site de școală</h1>
+    <h1>🏫 Școala Vadu-Parului</h1>
+    <p>Site oficial (model elev)</p>
 </header>
 
-<section>
+<nav>
+    <a href="#">Acasă</a>
+    <a href="#">Despre</a>
+    <a href="#">Clase</a>
+    <a href="#">Contact</a>
+</nav>
+
+<div class="container">
+
     <div class="box">
-        <h2>Despre mine</h2>
-        <p>Sunt elev și acesta este primul meu site de școală.</p>
+        <h2>Despre școală</h2>
+        <p>Școala Vadu-Parului este un loc unde elevii învață și se dezvoltă.</p>
     </div>
 
     <div class="box">
-        <h2>Clasa</h2>
-        <p>Sunt în clasa a V-a / a VI-a (schimbi tu).</p>
+        <h2>Clase</h2>
+        <p>Elevi din clasele V–VIII învață aici.</p>
     </div>
 
     <div class="box">
         <h2>Proiecte</h2>
-        <p>Aici voi pune temele și proiectele mele.</p>
+        <p>Activități, teme și proiecte școlare interesante.</p>
     </div>
 
     <div class="box">
         <h2>Contact</h2>
-        <p>Email: exemplu@email.com</p>
+        <p>Email: scoala@vadu-parului.ro</p>
     </div>
-</section>
+
+</div>
+
+<footer>
+    © 2026 Școala Vadu-Parului - Site realizat de un elev
+</footer>
 
 </body>
 </html>
