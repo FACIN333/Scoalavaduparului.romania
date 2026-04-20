@@ -9,37 +9,36 @@
 body{
     margin:0;
     font-family:Arial;
-    background: radial-gradient(circle, #111, black);
+    background:linear-gradient(180deg,#0f0f0f,#000);
     color:white;
 }
 
-/* TITLU SUS */
-.title{
+/* TITLU */
+header{
     text-align:center;
+    padding:25px;
     font-size:32px;
     font-weight:bold;
-    padding:25px;
     background:linear-gradient(90deg, red, orange);
-    box-shadow:0 5px 20px rgba(0,0,0,0.6);
+    box-shadow:0 5px 20px rgba(0,0,0,0.5);
 }
 
-/* BUTOANE */
-.container{
+/* MENIU */
+.menu{
     display:flex;
     justify-content:center;
+    flex-wrap:wrap;
     gap:20px;
     padding:40px;
-    flex-wrap:wrap;
 }
 
-.box{
+.card{
     width:200px;
     height:120px;
     border-radius:15px;
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:18px;
     font-weight:bold;
     text-decoration:none;
     color:white;
@@ -47,8 +46,8 @@ body{
     box-shadow:0 5px 15px rgba(0,0,0,0.5);
 }
 
-.box:hover{
-    transform:scale(1.1) rotate(1deg);
+.card:hover{
+    transform:scale(1.1);
 }
 
 /* culori */
@@ -57,82 +56,85 @@ body{
 .green{background:linear-gradient(135deg,#11998e,#38ef7d);}
 .yellow{background:linear-gradient(135deg,#f7971e,#ffd200);}
 
-/* PISICI JOS */
-.cats{
+/* GALERIE PISICI */
+.gallery{
     display:flex;
     justify-content:center;
-    gap:30px;
-    margin-top:40px;
+    flex-wrap:wrap;
+    gap:25px;
+    margin-top:20px;
 }
 
-.cats img{
-    width:160px;
-    border-radius:15px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.6);
-}
-
-.zzz{
+.cat{
     text-align:center;
+}
+
+.cat img{
+    width:170px;
+    height:170px;
+    object-fit:cover;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.7);
+}
+
+.cat p{
     margin-top:5px;
-    font-size:18px;
     opacity:0.7;
 }
 
-/* 🐱 PISICA MASCOTĂ */
-.cat-float{
+/* PISICA MASCOTĂ */
+.floating-cat{
     position:fixed;
     bottom:10px;
-    right:-200px;
+    right:10px;
     width:120px;
-    animation:moveCat 8s infinite;
-    z-index:999;
+    animation:float 4s infinite ease-in-out;
 }
 
-@keyframes moveCat {
-    0% { right:-200px; }
-    50% { right:20px; }
-    100% { right:-200px; }
+@keyframes float{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-20px);}
 }
 </style>
 </head>
 
 <body>
 
-<div class="title">
+<header>
     Școala Inv Radu Ion
-</div>
+</header>
 
-<div class="container">
+<div class="menu">
 
-    <a class="box blue" href="#">📸 Poze + Comentarii</a>
-    <a class="box purple" href="#">📂 Proiecte</a>
-    <a class="box green" href="#">📞 Contacte</a>
-    <a class="box yellow" href="#">ℹ Informații</a>
+    <a class="card blue" href="#">📸 Poze + Comentarii</a>
+    <a class="card purple" href="#">📂 Proiecte</a>
+    <a class="card green" href="#">📞 Contact</a>
+    <a class="card yellow" href="#">ℹ Informații</a>
 
 </div>
 
 <!-- PISICI -->
-<div class="cats">
+<div class="gallery">
 
-    <div>
-        <img src="https://placekitten.com/200/200">
-        <div class="zzz">Zzz</div>
+    <div class="cat">
+        <img src="https://cdn2.thecatapi.com/images/MTY3ODIyMQ.jpg">
+        <p>Zzz 💤</p>
     </div>
 
-    <div>
-        <img src="https://placekitten.com/201/200">
-        <div class="zzz">Zzz</div>
+    <div class="cat">
+        <img src="https://cdn2.thecatapi.com/images/MTY3ODIyMg.jpg">
+        <p>Zzz 💤</p>
     </div>
 
-    <div>
-        <img src="https://placekitten.com/202/200">
-        <div class="zzz">Zzz</div>
+    <div class="cat">
+        <img src="https://cdn2.thecatapi.com/images/MTY3ODIyNA.jpg">
+        <p>Zzz 💤</p>
     </div>
 
 </div>
 
-<!-- 🐱 PISICA MASCOTĂ ANIMATĂ -->
-<img class="cat-float" src="https://placekitten.com/300/300">
+<!-- PISICA CARE SE MIȘCĂ -->
+<img class="floating-cat" src="https://cdn2.thecatapi.com/images/MTY3ODIyMQ.jpg">
 
 </body>
 </html>
