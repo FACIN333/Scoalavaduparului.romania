@@ -3,38 +3,42 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Meniu</title>
+<title>Școala Inv Radu Ion</title>
 
 <style>
 body{
     margin:0;
     font-family:Arial;
-    background:#0f0f0f;
+    background:black;
     color:white;
 }
 
+/* TITLU SUS */
 .title{
     text-align:center;
-    padding:20px;
-    font-size:26px;
+    font-size:32px;
     font-weight:bold;
-    background:linear-gradient(90deg,#ff0000,#ff6a00);
+    padding:25px;
+    background:linear-gradient(90deg, red, orange);
 }
 
+/* BUTOANE */
 .container{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    display:flex;
+    justify-content:center;
     gap:20px;
-    padding:30px;
+    padding:40px;
+    flex-wrap:wrap;
 }
 
 .box{
-    height:150px;
+    width:200px;
+    height:120px;
+    border-radius:15px;
     display:flex;
     align-items:center;
     justify-content:center;
-    border-radius:15px;
-    font-size:20px;
+    font-size:18px;
     font-weight:bold;
     text-decoration:none;
     color:white;
@@ -42,27 +46,32 @@ body{
 }
 
 .box:hover{
-    transform:scale(1.07);
+    transform:scale(1.1);
 }
 
 /* culori */
-.poze{background:linear-gradient(135deg,#00c6ff,#0072ff);}
-.proiecte{background:linear-gradient(135deg,#8e2de2,#4a00e0);}
-.contact{background:linear-gradient(135deg,#11998e,#38ef7d);}
-.info{background:linear-gradient(135deg,#f7971e,#ffd200);}
+.blue{background:linear-gradient(135deg,#00c6ff,#0072ff);}
+.purple{background:linear-gradient(135deg,#8e2de2,#4a00e0);}
+.green{background:linear-gradient(135deg,#11998e,#38ef7d);}
+.yellow{background:linear-gradient(135deg,#f7971e,#ffd200);}
 
-/* pisici jos */
+/* PISICI JOS */
 .cats{
     display:flex;
     justify-content:center;
-    gap:20px;
-    padding:20px;
+    gap:30px;
+    margin-top:40px;
 }
 
 .cats img{
-    width:120px;
-    border-radius:10px;
-    opacity:0.9;
+    width:160px;
+    border-radius:15px;
+}
+
+.zzz{
+    text-align:center;
+    margin-top:5px;
+    font-size:18px;
 }
 </style>
 </head>
@@ -75,10 +84,32 @@ body{
 
 <div class="container">
 
-    <a href="poze.html" class="box poze">📸 Poze + Comentarii</a>
-    <a href="proiecte.html" class="box proiecte">📂 Proiecte</a>
-    <a href="contact.html" class="box contact">📞 Contacte</a>
-    <a href="info.html" class="box info">ℹ Informații</a>
+    <a class="box blue" href="#">📸 Poze + Comentarii</a>
+    <a class="box purple" href="#">📂 Proiecte</a>
+    <a class="box green" href="#">📞 Contacte</a>
+    <a class="box yellow" href="#">ℹ Informații</a>
 
 </div>
-<img src="https://placekitten.com/300/200">
+
+<!-- PISICI -->
+<div class="cats">
+
+    <div>
+        <img src="https://placekitten.com/200/200">
+        <div class="zzz">Zzz</div>
+    </div>
+
+    <div>
+        <img src="https://placekitten.com/201/200">
+        <div class="zzz">Zzz</div>
+    </div>
+
+    <div>
+        <img src="https://placekitten.com/202/200">
+        <div class="zzz">Zzz</div>
+    </div>
+
+</div>
+
+</body>
+</html>
