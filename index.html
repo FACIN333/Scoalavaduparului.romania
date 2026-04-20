@@ -13,6 +13,15 @@ body{
     color:white;
 }
 
+/* TITLU */
+header{
+    text-align:center;
+    padding:25px;
+    font-size:32px;
+    font-weight:bold;
+    background:linear-gradient(90deg, red, orange);
+}
+
 /* MENIU */
 .menu{
     display:flex;
@@ -22,7 +31,7 @@ body{
     padding:60px 40px;
 }
 
-/* CASUTE */
+/* BUTOANE */
 .card{
     width:220px;
     height:130px;
@@ -43,7 +52,6 @@ body{
     transform:scale(1.1);
 }
 
-/* culori */
 .blue{background:linear-gradient(135deg,#00c6ff,#0072ff);}
 .purple{background:linear-gradient(135deg,#8e2de2,#4a00e0);}
 .green{background:linear-gradient(135deg,#11998e,#38ef7d);}
@@ -53,27 +61,16 @@ body{
 
 <body>
 
+<header>
+    Școala Inv Radu Ion
+</header>
+
 <div class="menu">
 
-    <div class="card blue">
-        📸<br>
-        Poze + Comentarii
-    </div>
-
-    <div class="card purple">
-        📂<br>
-        Proiecte
-    </div>
-
-    <div class="card green">
-        📞<br>
-        Contact
-    </div>
-
-    <div class="card yellow">
-        ℹ<br>
-        Informații
-    </div>
+    <a class="card blue" href="poze.html">📸 Poze</a>
+    <a class="card purple" href="proiecte.html">📂 Proiecte</a>
+    <a class="card green" href="contact.html">📞 Contact</a>
+    <a class="card yellow" href="info.html">ℹ Informații</a>
 
 </div>
 
