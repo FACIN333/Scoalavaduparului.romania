@@ -1,111 +1,71 @@
 <!DOCTYPE html>
-<html>
+<html lang="ro">
 <head>
-    <title>Școala Vadu-Parului</title>
-
+    <meta charset="UTF-8">
+    <title>Școala Inv Radu Ion</title>
     <style>
         body {
             margin: 0;
-            font-family: Arial;
-            background: #111;
+            font-family: Arial, sans-serif;
+            background: #0f0f0f;
             color: white;
         }
 
-        header {
-            background: #d60000;
-            padding: 25px;
-            text-align: center;
-        }
-
-        nav {
-            background: #222;
-            padding: 10px;
-            text-align: center;
-        }
-
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-        }
-
-        nav a:hover {
-            color: red;
-        }
-
-        .container {
+        /* Meniu sus */
+        .menu {
+            background: linear-gradient(90deg, #ff0000, #ff6a00);
             padding: 20px;
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
         }
 
-        h1 {
-            color: white;
-            margin: 10px 0;
+        /* Zona butoane */
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 80px;
         }
 
         .box {
-            background: #1f1f1f;
-            padding: 20px;
-            margin: 15px 0;
-            border-radius: 12px;
+            width: 200px;
+            height: 120px;
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 22px;
+            font-weight: bold;
+            cursor: pointer;
             transition: 0.3s;
+            text-decoration: none;
+            color: white;
         }
 
         .box:hover {
-            background: #2a2a2a;
-            transform: scale(1.02);
+            transform: scale(1.1);
         }
 
-        footer {
-            background: #000;
-            text-align: center;
-            padding: 15px;
-            margin-top: 20px;
-            color: gray;
+        .poze {
+            background: linear-gradient(135deg, #00c6ff, #0072ff);
+        }
+
+        .comentarii {
+            background: linear-gradient(135deg, #ff4e50, #f9d423);
         }
     </style>
 </head>
-
 <body>
 
-<header>
-    <h1>🏫 Școala Vadu-Parului</h1>
-    <p>Site oficial (model elev)</p>
-</header>
-
-<nav>
-    <a href="#">Acasă</a>
-    <a href="#">Despre</a>
-    <a href="#">Clase</a>
-    <a href="#">Contact</a>
-</nav>
-
-<div class="container">
-
-    <div class="box">
-        <h2>Despre școală</h2>
-        <p>Școala Vadu-Parului este un loc unde elevii învață și se dezvoltă.</p>
+    <div class="menu">
+        Școala Inv Radu Ion
     </div>
 
-    <div class="box">
-        <h2>Clase</h2>
-        <p>Elevi din clasele V–VIII învață aici.</p>
+    <div class="container">
+        <a href="poze.html" class="box poze">Poze</a>
+        <a href="comentarii.html" class="box comentarii">Comentarii</a>
     </div>
-
-    <div class="box">
-        <h2>Proiecte</h2>
-        <p>Activități, teme și proiecte școlare interesante.</p>
-    </div>
-
-    <div class="box">
-        <h2>Contact</h2>
-        <p>Email: scoala@vadu-parului.ro</p>
-    </div>
-
-</div>
-
-<footer>
-    © 2026 Școala Vadu-Parului - Site realizat de un elev
-</footer>
 
 </body>
 </html>
