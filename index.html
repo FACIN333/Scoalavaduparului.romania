@@ -1,144 +1,183 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Școala Inv Radu Ion</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Școala Inv Radu Ion</title>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #0f0f0f;
-            color: white;
-        }
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0f0f0f;
+    color: white;
+}
 
-        header {
-            background: #d60000;
-            padding: 25px;
-            text-align: center;
-        }
+header {
+    background: #d60000;
+    text-align: center;
+    padding: 25px;
+}
 
-        .menu {
-            background: linear-gradient(90deg, #ff0000, #ff6a00);
-            padding: 15px;
-            text-align: center;
-            font-size: 22px;
-            font-weight: bold;
-        }
+.menu-title {
+    background: linear-gradient(90deg, #ff0000, #ff6a00);
+    text-align: center;
+    padding: 15px;
+    font-size: 22px;
+    font-weight: bold;
+}
 
-        nav {
-            background: #222;
-            padding: 10px;
-            text-align: center;
-        }
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 30px;
+}
 
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-        }
+.card {
+    background: #1f1f1f;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
 
-        nav a:hover {
-            color: red;
-        }
+.card:hover {
+    transform: scale(1.05);
+    background: #2a2a2a;
+}
 
-        .container {
-            padding: 20px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            justify-content: center;
-        }
+.poze { background: linear-gradient(135deg, #00c6ff, #0072ff); }
+.proiecte { background: linear-gradient(135deg, #8e2de2, #4a00e0); }
+.contact { background: linear-gradient(135deg, #11998e, #38ef7d); }
+.info { background: linear-gradient(135deg, #f7971e, #ffd200); }
 
-        .box {
-            background: #1f1f1f;
-            padding: 20px;
-            width: 220px;
-            height: 140px;
-            border-radius: 15px;
-            text-align: center;
-            font-size: 16px;
-            transition: 0.3s;
-            color: white;
-        }
-
-        .box:hover {
-            background: #2a2a2a;
-            transform: scale(1.05);
-        }
-
-        .poze {
-            background: linear-gradient(135deg, #00c6ff, #0072ff);
-        }
-
-        .comentarii {
-            background: linear-gradient(135deg, #ff4e50, #f9d423);
-        }
-
-        footer {
-            background: #000;
-            text-align: center;
-            padding: 15px;
-            margin-top: 20px;
-            color: gray;
-        }
-    </style>
+footer {
+    text-align: center;
+    padding: 15px;
+    color: gray;
+    background: #000;
+}
+</style>
 </head>
 
 <body>
 
 <header>
     <h1>🏫 Școala Vadu-Parului</h1>
-    <p>Site realizat de elev</p>
 </header>
 
-<div class="menu">
+<div class="menu-title">
     Școala Inv Radu Ion
 </div>
 
-<nav>
-    <a href="#">Acasă</a>
-    <a href="#">Despre</a>
-    <a href="#">Clase</a>
-    <a href="#">Contact</a>
-</nav>
-
 <div class="container">
 
-    <div class="box">
-        <h3>Despre școală</h3>
-        Școala unde elevii învață și se dezvoltă.
-    </div>
+    <a href="poze.html" class="card poze">
+        📸 Poze + Comentarii
+    </a>
 
-    <div class="box">
-        <h3>Clase</h3>
-        Clasele V–VIII.
-    </div>
+    <a href="proiecte.html" class="card proiecte">
+        📂 Proiecte
+    </a>
 
-    <div class="box">
-        <h3>Proiecte</h3>
-        Activități școlare interesante.
-    </div>
+    <a href="contact.html" class="card contact">
+        📞 Contacte
+    </a>
 
-    <div class="box poze">
-        📸 Poze
-    </div>
-
-    <div class="box comentarii">
-        💬 Comentarii
-    </div>
-
-    <div class="box">
-        <h3>Contact</h3>
-        scoala@vadu-parului.ro
-    </div>
+    <a href="info.html" class="card info">
+        ℹ Informații Școală
+    </a>
 
 </div>
 
 <footer>
-    © 2026 Școala Vadu-Parului
+    © 2026 Site realizat de elev
 </footer>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<title>Poze</title>
+<style>
+body { background:#111; color:white; font-family:Arial; text-align:center; }
+img { width:250px; margin:10px; border-radius:10px; }
+</style>
+</head>
+<body>
+
+<h1>📸 Poze</h1>
+
+<img src="images/poza1.jpg">
+<img src="images/poza2.jpg">
+
+<h2>💬 Comentarii</h2>
+
+<input id="nume" placeholder="Nume">
+<input id="msg" placeholder="Comentariu">
+<button onclick="add()">Trimite</button>
+
+<div id="c"></div>
+
+<script>
+function add() {
+    let n = document.getElementById("nume").value;
+    let m = document.getElementById("msg").value;
+    document.getElementById("c").innerHTML += "<p><b>"+n+":</b> "+m+"</p>";
+}
+</script>
+
+<br><br>
+<a href="index.html" style="color:red;">⬅ Înapoi</a>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<title>Proiecte</title>
+<style>
+body { background:#111; color:white; text-align:center; font-family:Arial; }
+img { width:300px; margin:10px; border-radius:10px; }
+</style>
+</head>
+<body>
+
+<h1>📂 Proiecte</h1>
+
+<img src="images/proiect1.jpg">
+<img src="images/proiect2.jpg">
+
+<br><a href="index.html" style="color:red;">⬅ Înapoi</a>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<title>Contact</title>
+<style>
+body { background:#111; color:white; text-align:center; font-family:Arial; }
+</style>
+</head>
+<body>
+
+<h1>📞 Contact</h1>
+
+<p>Email: scoala@vadu-parului.ro</p>
+<p>Telefon: 07xx xxx xxx</p>
+
+<br>
+<a href="index.html" style="color:red;">⬅ Înapoi</a>
 
 </body>
 </html>
