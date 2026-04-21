@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Poze & Comentarii</title>
+
+<style>
+body{
+    background:#111;
+    color:white;
+    font-family:Arial;
+    text-align:center;
+}
+
+#chat{
+    max-width:500px;
+    margin:auto;
+}
+
+.message{
+    background:#222;
+    margin:10px;
+    padding:10px;
+    border-radius:10px;
+}
+
+img{
+    max-width:100%;
+    border-radius:10px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Poze & Chat</h1>
+
+<input type="file" id="imageInput"><br><br>
+<input type="text" id="textInput" placeholder="Scrie ceva..."><br><br>
+<button onclick="send()">Trimite</button>
+
+<div id="chat"></div>
+
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-storage.js"></script>
+
+<script>
+// 🔴 PUNE AICI DATELE TALE DIN FIREBASE
+const firebaseConfig = {
+  apiKey: "API_KEY",
+  authDomain: "PROJECT_ID.firebaseapp.com",
+  projectId: "PROJECT_ID",
+  storageBucket: "PROJECT_ID.appspot.com",
+};
+
+// INIT
+const app = firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+const storage = firebase.storage();
+
+async function send(){
+    const file = document.getElementById("imageInput").files[0];
+    const text = document.getElementById("textInput").value;
+
+    let imageUrl = "";
+
+    if(file){
+        const ref = storage.ref("images/" + file.name);
+        await ref.put(file);
+        imageUrl = await ref.getDownloadURL();
+    }
+
+    await db.collection("messages").add({
+        text: text,
+        image: imageUrl,
+        time: Date.now()
+    });
+}
+
+// LIVE UPDATE
+db.collection("messages").orderBy("time")
+.onSnapshot(snapshot => {
+    const chat = document.getElementById("chat");
+    chat.innerHTML = "";
+
+    snapshot.forEach(doc => {
+        const data = doc.data();
+
+        chat.innerHTML += `
+        <div class="message">
+            <p>${data.text}</p>
+            ${data.image ? `<img src="${data.image}">` : ""}
+        </div>
+        `;
+    });
+});
+</script>
+
+</body>
+</html>
