@@ -9,60 +9,46 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f5f5f5; /* simplu ca în PDF */
-}
+    background: #f5f5f5;
 }
 
 /* APP CARD */
 .app {
-    max-width: 500px;
-    margin: 20px auto;
+    max-width: 400px; /* mai mic = ca PDF */
+    margin: 40px auto;
     background: white;
-    border-radius: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    animation: fadeIn 0.6s ease;
 }
 
 /* HEADER */
 .header {
     background: #004a99;
     color: white;
-    padding: 20px;
-    font-size: 20px;
+    padding: 15px;
+    font-size: 18px;
     text-align: center;
+    font-weight: bold;
 }
 
 /* MENU */
 .menu a {
-    display: flex;
-    align-items: center;
-    padding: 15px;
+    display: block;
+    padding: 12px;
     text-decoration: none;
     color: black;
-    border-bottom: 1px solid #eee;
-    transition: 0.3s;
+    border-bottom: 1px solid #ccc;
 }
 
 .menu a:hover {
-    background: #f0f0f0;
-    transform: scale(1.02);
-}
-
-/* ICON */
-.icon {
-    margin-right: 10px;
-    font-size: 20px;
+    background: #eee;
 }
 
 /* PAGE */
 .page {
     display: none;
     padding: 20px;
-    animation: fadeIn 0.4s ease;
 }
 
 /* ACTIVE PAGE */
@@ -74,39 +60,10 @@ body {
 .back {
     margin-top: 20px;
     display: inline-block;
-    padding: 10px;
+    padding: 8px 12px;
     background: #004a99;
     color: white;
     text-decoration: none;
-    border-radius: 8px;
-}
-
-/* CHAT */
-.chat-box {
-    height: 200px;
-    overflow-y: auto;
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin-bottom: 10px;
-}
-
-.chat-input {
-    display: flex;
-}
-
-.chat-input input {
-    flex: 1;
-    padding: 10px;
-}
-
-.chat-input button {
-    padding: 10px;
-}
-
-/* ANIMATION */
-@keyframes fadeIn {
-    from {opacity:0; transform:translateY(10px);}
-    to {opacity:1; transform:translateY(0);}
 }
 </style>
 </head>
@@ -117,53 +74,45 @@ body {
 
 <div class="header">Scoala Gim Inv Radu Ion</div>
 
-<!-- MENU -->
 <div class="menu" id="menu">
-    <a href="#" onclick="openPage('contact')"><span class="icon">📞</span>Contacte si opinii</a>
-    <a href="#" onclick="openPage('chat')"><span class="icon">💬</span>Chat</a>
-    <a href="#" onclick="openPage('desene')"><span class="icon">🎨</span>Desene</a>
-    <a href="#" onclick="openPage('proiecte')"><span class="icon">📁</span>Proiecte</a>
-    <a href="#" onclick="openPage('info')"><span class="icon">ℹ️</span>Info</a>
+    <a href="#" onclick="openPage('contact')">Contacte si opinii</a>
+    <a href="#" onclick="openPage('chat')">Chat</a>
+    <a href="#" onclick="openPage('desene')">Desene</a>
+    <a href="#" onclick="openPage('proiecte')">Proiecte</a>
+    <a href="#" onclick="openPage('info')">Info</a>
 </div>
 
-<!-- CONTACT -->
 <div id="contact" class="page">
-    <h2>Contacte si opinii</h2>
+    <h3>Contacte si opinii</h3>
     <p>Aici poti scrie opinii.</p>
     <a href="#" class="back" onclick="goBack()">⬅ Inapoi</a>
 </div>
 
-<!-- CHAT -->
 <div id="chat" class="page">
-    <h2>Chat</h2>
+    <h3>Chat</h3>
 
-    <div class="chat-box" id="chatBox"></div>
+    <div id="chatBox"></div>
 
-    <div class="chat-input">
-        <input type="text" id="msg" placeholder="Scrie mesaj...">
-        <button onclick="sendMsg()">Trimite</button>
-    </div>
+    <input type="text" id="msg" placeholder="Scrie mesaj...">
+    <button onclick="sendMsg()">Trimite</button>
 
     <a href="#" class="back" onclick="goBack()">⬅ Inapoi</a>
 </div>
 
-<!-- DESENE -->
 <div id="desene" class="page">
-    <h2>Desene</h2>
+    <h3>Desene</h3>
     <p>Aici adaugi desene.</p>
     <a href="#" class="back" onclick="goBack()">⬅ Inapoi</a>
 </div>
 
-<!-- PROIECTE -->
 <div id="proiecte" class="page">
-    <h2>Proiecte</h2>
+    <h3>Proiecte</h3>
     <p>Aici adaugi proiecte.</p>
     <a href="#" class="back" onclick="goBack()">⬅ Inapoi</a>
 </div>
 
-<!-- INFO -->
 <div id="info" class="page">
-    <h2>Info</h2>
+    <h3>Info</h3>
     <p>Informatii despre scoala.</p>
     <a href="#" class="back" onclick="goBack()">⬅ Inapoi</a>
 </div>
@@ -182,7 +131,6 @@ function goBack() {
     document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
 }
 
-/* CHAT FUNCTION */
 function sendMsg() {
     let input = document.getElementById("msg");
     let box = document.getElementById("chatBox");
@@ -190,7 +138,6 @@ function sendMsg() {
     if(input.value.trim() !== "") {
         box.innerHTML += "<div>👤 " + input.value + "</div>";
         input.value = "";
-        box.scrollTop = box.scrollHeight;
     }
 }
 </script>
