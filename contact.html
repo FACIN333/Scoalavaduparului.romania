@@ -2,54 +2,82 @@
 <html lang="ro">
 <head>
 <meta charset="UTF-8">
-<title>Contact</title>
+<title>Chat</title>
 
 <style>
 body{
+    font-family:Arial;
     background:#111;
     color:white;
-    font-family:Arial;
     text-align:center;
 }
 
-form{
-    margin-top:50px;
+#chat{
+    max-width:400px;
+    margin:auto;
 }
 
-input, textarea{
-    width:250px;
-    padding:10px;
+.msg{
+    background:#222;
     margin:10px;
-    border:none;
-    border-radius:5px;
+    padding:10px;
+    border-radius:10px;
+}
+
+input{
+    padding:10px;
+    width:200px;
 }
 
 button{
-    padding:10px 20px;
+    padding:10px;
     background:red;
     color:white;
     border:none;
-    border-radius:5px;
-    cursor:pointer;
+}
+a{
+    color:white;
+    display:block;
+    margin-top:20px;
 }
 </style>
 </head>
 
 <body>
 
-<h1>Contact</h1>
+<h1>Chat școală</h1>
 
-<form action="https://formspree.io/f/XXXXXXX" method="POST">
-    
-    <input type="text" name="name" placeholder="Numele tău" required><br>
-    
-    <input type="email" name="email" placeholder="Email" required><br>
-    
-    <textarea name="message" placeholder="Mesajul tău" required></textarea><br>
-    
-    <button type="submit">Trimite</button>
+<div id="chat"></div>
 
-</form>
+<input id="text" placeholder="Scrie mesaj...">
+<button onclick="send()">Trimite</button>
+
+<a href="index.html">🔙 Înapoi</a>
+
+<script>
+function load(){
+    let data = JSON.parse(localStorage.getItem("chat") || "[]");
+    let box = document.getElementById("chat");
+    box.innerHTML = "";
+    data.forEach(m=>{
+        box.innerHTML += `<div class="msg">${m}</div>`;
+    });
+}
+
+function send(){
+    let text = document.getElementById("text").value;
+    if(!text) return;
+
+    let data = JSON.parse(localStorage.getItem("chat") || "[]");
+    data.push(text);
+    localStorage.setItem("chat", JSON.stringify(data));
+
+    document.getElementById("text").value="";
+    load();
+}
+
+load();
+</script>
 
 </body>
 </html>
