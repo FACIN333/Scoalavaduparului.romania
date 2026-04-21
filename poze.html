@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<title>Poze</title>
+
+<style>
+body{
+    font-family:Arial;
+    background:#111;
+    color:white;
+    text-align:center;
+}
+
+img{
+    max-width:300px;
+    margin:10px;
+    border-radius:10px;
+}
+
+a{
+    color:white;
+    display:block;
+    margin-top:20px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Poze școală</h1>
+
+<input type="file" onchange="load(event)">
+
+<div id="gallery"></div>
+
+<a href="index.html">🔙 Înapoi</a>
+
+<script>
+function load(event){
+    const img = document.createElement("img");
+    img.src = URL.createObjectURL(event.target.files[0]);
+    document.getElementById("gallery").appendChild(img);
+}
+</script>
+
+</body>
+</html>
