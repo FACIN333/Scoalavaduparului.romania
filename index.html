@@ -9,18 +9,17 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    background: linear-gradient(135deg, #1e90ff, #00bfff);
 }
 
-/* APP CARD */
+/* APP */
 .app {
     max-width: 500px;
     margin: 20px auto;
     background: white;
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    animation: fadeIn 0.6s ease;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
 }
 
 /* HEADER */
@@ -28,8 +27,9 @@ body {
     background: #004a99;
     color: white;
     padding: 20px;
-    font-size: 20px;
     text-align: center;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 /* MENU */
@@ -44,7 +44,7 @@ body {
 }
 
 .menu a:hover {
-    background: #f0f0f0;
+    background: #e6f3ff;
     transform: scale(1.02);
 }
 
@@ -54,14 +54,12 @@ body {
     font-size: 20px;
 }
 
-/* PAGE */
+/* PAGES */
 .page {
     display: none;
     padding: 20px;
-    animation: fadeIn 0.4s ease;
 }
 
-/* ACTIVE PAGE */
 .active {
     display: block;
 }
@@ -83,6 +81,7 @@ body {
     overflow-y: auto;
     border: 1px solid #ccc;
     padding: 10px;
+    background: #f9f9f9;
     margin-bottom: 10px;
 }
 
@@ -97,12 +96,9 @@ body {
 
 .chat-input button {
     padding: 10px;
-}
-
-/* ANIMATION */
-@keyframes fadeIn {
-    from {opacity:0; transform:translateY(10px);}
-    to {opacity:1; transform:translateY(0);}
+    background: #004a99;
+    color: white;
+    border: none;
 }
 </style>
 </head>
@@ -113,7 +109,7 @@ body {
 
 <div class="header">Scoala Gim Inv Radu Ion</div>
 
-<!-- MENU -->
+<!-- MENIU -->
 <div class="menu" id="menu">
     <a href="#" onclick="openPage('contact')"><span class="icon">📞</span>Contacte si opinii</a>
     <a href="#" onclick="openPage('chat')"><span class="icon">💬</span>Chat</a>
@@ -124,14 +120,14 @@ body {
 
 <!-- CONTACT -->
 <div id="contact" class="page">
-    <h2>Contacte si opinii</h2>
-    <p>Aici poti scrie opinii.</p>
-    <a href="#" class="back" onclick="goBack()">⬅ Inapoi</a>
+    <h2>📞 Contacte si opinii</h2>
+    <p>Aici elevii pot scrie opinii.</p>
+    <a class="back" onclick="goBack()">⬅ Inapoi</a>
 </div>
 
 <!-- CHAT -->
 <div id="chat" class="page">
-    <h2>Chat</h2>
+    <h2>💬 Chat</h2>
 
     <div class="chat-box" id="chatBox"></div>
 
@@ -140,28 +136,28 @@ body {
         <button onclick="sendMsg()">Trimite</button>
     </div>
 
-    <a href="#" class="back" onclick="goBack()">⬅ Inapoi</a>
+    <a class="back" onclick="goBack()">⬅ Inapoi</a>
 </div>
 
 <!-- DESENE -->
 <div id="desene" class="page">
-    <h2>Desene</h2>
-    <p>Aici adaugi desene.</p>
-    <a href="#" class="back" onclick="goBack()">⬅ Inapoi</a>
+    <h2>🎨 Desene</h2>
+    <p>Aici poți adăuga desene.</p>
+    <a class="back" onclick="goBack()">⬅ Inapoi</a>
 </div>
 
 <!-- PROIECTE -->
 <div id="proiecte" class="page">
-    <h2>Proiecte</h2>
-    <p>Aici adaugi proiecte.</p>
-    <a href="#" class="back" onclick="goBack()">⬅ Inapoi</a>
+    <h2>📁 Proiecte</h2>
+    <p>Aici poți adăuga proiecte.</p>
+    <a class="back" onclick="goBack()">⬅ Inapoi</a>
 </div>
 
 <!-- INFO -->
 <div id="info" class="page">
-    <h2>Info</h2>
-    <p>Informatii despre scoala.</p>
-    <a href="#" class="back" onclick="goBack()">⬅ Inapoi</a>
+    <h2>ℹ️ Info</h2>
+    <p>Informații despre școală.</p>
+    <a class="back" onclick="goBack()">⬅ Inapoi</a>
 </div>
 
 </div>
@@ -178,7 +174,7 @@ function goBack() {
     document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
 }
 
-/* CHAT FUNCTION */
+/* CHAT */
 function sendMsg() {
     let input = document.getElementById("msg");
     let box = document.getElementById("chatBox");
