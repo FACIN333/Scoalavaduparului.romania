@@ -9,17 +9,15 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #4facfe, #00f2fe); /* CURCUBEU */
+    background: #f5f5f5;
 }
 
-/* APP CARD */
+/* CARD */
 .app {
-    max-width: 400px;
-    margin: 60px auto; /* spațiu ca să vezi fundalul */
+    max-width: 500px;
+    margin: 30px auto;
     background: white;
     border: 1px solid #ccc;
-    border-radius: 10px;
-    overflow: hidden;
 }
 
 /* HEADER */
@@ -27,7 +25,6 @@ body {
     background: #004a99;
     color: white;
     padding: 15px;
-    font-size: 18px;
     text-align: center;
     font-weight: bold;
 }
@@ -35,7 +32,7 @@ body {
 /* MENU */
 .menu a {
     display: block;
-    padding: 12px;
+    padding: 14px;
     text-decoration: none;
     color: black;
     border-bottom: 1px solid #ccc;
@@ -43,27 +40,6 @@ body {
 
 .menu a:hover {
     background: #eee;
-}
-
-/* PAGE */
-.page {
-    display: none;
-    padding: 20px;
-}
-
-/* ACTIVE PAGE */
-.active {
-    display: block;
-}
-
-/* BACK BUTTON */
-.back {
-    margin-top: 20px;
-    display: inline-block;
-    padding: 8px 12px;
-    background: #004a99;
-    color: white;
-    text-decoration: none;
 }
 </style>
 </head>
@@ -74,73 +50,15 @@ body {
 
 <div class="header">Scoala Gim Inv Radu Ion</div>
 
-<div class="menu" id="menu">
-    <a href="#" onclick="openPage('contact')">Contacte si opinii</a>
-    <a href="#" onclick="openPage('chat')">Chat</a>
-    <a href="#" onclick="openPage('desene')">Desene</a>
-    <a href="#" onclick="openPage('proiecte')">Proiecte</a>
-    <a href="#" onclick="openPage('info')">Info</a>
-</div>
-
-<div id="contact" class="page">
-    <h3>Contacte si opinii</h3>
-    <p>Aici poti scrie opinii.</p>
-    <a href="#" class="back" onclick="goBack()">⬅ Inapoi</a>
-</div>
-
-<div id="chat" class="page">
-    <h3>Chat</h3>
-
-    <div id="chatBox"></div>
-
-    <input type="text" id="msg" placeholder="Scrie mesaj...">
-    <button onclick="sendMsg()">Trimite</button>
-
-    <a href="#" class="back" onclick="goBack()">⬅ Inapoi</a>
-</div>
-
-<div id="desene" class="page">
-    <h3>Desene</h3>
-    <p>Aici adaugi desene.</p>
-    <a href="#" class="back" onclick="goBack()">⬅ Inapoi</a>
-</div>
-
-<div id="proiecte" class="page">
-    <h3>Proiecte</h3>
-    <p>Aici adaugi proiecte.</p>
-    <a href="#" class="back" onclick="goBack()">⬅ Inapoi</a>
-</div>
-
-<div id="info" class="page">
-    <h3>Info</h3>
-    <p>Informatii despre scoala.</p>
-    <a href="#" class="back" onclick="goBack()">⬅ Inapoi</a>
+<div class="menu">
+    <a href="contact.html">Contacte si opinii</a>
+    <a href="chat.html">Chat</a>
+    <a href="desene.html">Desene</a>
+    <a href="proiecte.html">Proiecte</a>
+    <a href="info.html">Info</a>
 </div>
 
 </div>
-
-<script>
-function openPage(id) {
-    document.getElementById("menu").style.display = "none";
-    document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
-    document.getElementById(id).classList.add("active");
-}
-
-function goBack() {
-    document.getElementById("menu").style.display = "block";
-    document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
-}
-
-function sendMsg() {
-    let input = document.getElementById("msg");
-    let box = document.getElementById("chatBox");
-
-    if(input.value.trim() !== "") {
-        box.innerHTML += "<div>👤 " + input.value + "</div>";
-        input.value = "";
-    }
-}
-</script>
 
 </body>
 </html>
