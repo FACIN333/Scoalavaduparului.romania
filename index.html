@@ -6,39 +6,38 @@
 
 <style>
 body {
-    margin: 0;
     font-family: Arial;
     background: linear-gradient(135deg, #4facfe, #00f2fe);
+    margin: 0;
     text-align: center;
 }
 
-.header {
-    padding: 30px;
-    color: white;
-    font-size: 24px;
-    font-weight: bold;
-}
-
-.menu {
-    display: flex;
-    flex-direction: column;
-    width: 300px;
-    margin: auto;
+.menu-container {
+    width: 320px;
+    margin: 60px auto;
     background: white;
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
-.menu a {
-    padding: 15px;
+.menu-header {
+    background: #004a99;
+    color: white;
+    padding: 18px;
+    font-weight: bold;
+}
+
+.menu-item {
+    display: block;
+    padding: 14px;
     text-decoration: none;
-    color: black;
+    color: #333;
     border-bottom: 1px solid #eee;
     transition: 0.3s;
 }
 
-.menu a:hover {
+.menu-item:hover {
     background: #f0f0f0;
 }
 </style>
@@ -46,14 +45,14 @@ body {
 
 <body>
 
-<div class="header">Scoala Gim Inv Radu Ion</div>
+<div class="menu-container">
+    <div class="menu-header">Scoala Gim Inv Radu Ion</div>
 
-<div class="menu">
-    <a href="contact.html">Contacte si opinii</a>
-    <a href="chat.html">Chat</a>
-    <a href="desene.html">Desene</a>
-    <a href="proiecte.html">Proiecte</a>
-    <a href="info.html">Info</a>
+    <a href="contact.html" class="menu-item">Contacte si opinii</a>
+    <a href="chat.html" class="menu-item">Chat</a>
+    <a href="desene.html" class="menu-item">Desene</a>
+    <a href="proiecte.html" class="menu-item">Proiecte</a>
+    <a href="info.html" class="menu-item">Info</a>
 </div>
 
 </body>
